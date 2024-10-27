@@ -1,0 +1,105 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * My take on 'real programmers Dvorak' layout with custom symbol layers.
+ * References:
+ *     Programmers dv: Programmer Dvorak layout (by Roland Kaufmann)
+ *     Real programmers dv: https://github.com/ThePrimeagen
+ *     My qmk config: https://github.com/timonviola/qmk_firmware/tree/master/keyboards/crkbd/keymaps/timon
+ *
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+#define BASE 0
+#define SYM 1
+#define MEDIA 2
+#define FUN 3
+
+// This is ok if only a single sticky key is used.
+// Create new behavior if multiple &sk is used.
+&sk {
+    quick-release;
+};
+
+/ {
+    behaviors {
+        td_caps: tap_dance_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CAPS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LSHFT>, <&kp CAPSLOCK>;
+        };
+    };
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            label = "base";
+// +------------------------------------------------------------------------------------+
+// | none | ; : | , < | . > |  P  |  Y        |         |  FUN F  |  G  |  C  |  R  |  MEDIA L  | none |
+// | none |  A  |  O  |  E  |  U  |  I        |         |  D      |  H  |  T  |  N  |  S        | none |
+// | none | ' " |  Q  |  J  |  K  |  MACRO X  |         |  B      |  M  |  W  |  V  |  Z        | none |
+//               | CTRL/ESC | SPACE | SHIFT/CAPS |  | ALT/ENT | BACKSPACE | SYM |
+// +------------------------------------------------------------------------------------+
+            bindings = <
+   &none &kp SEMI   &kp COMMA &kp DOT &kp P &kp Y          &lt FUN F &kp G  &kp C   &kp R   &lt MEDIA L &none
+   &none &kp A      &kp O     &kp E   &kp U &kp I          &kp D     &kp H  &kp T   &kp N   &kp S       &none
+   &none &kp SQT    &kp Q     &kp J   &kp K &lt MACRO X    &kp B     &kp M  &kp W   &kp V   &kp Z       &none
+                  &mt LCTRL ESC &kp SPACE &td_caps       &mt LALT ENTER &kp BACKSPACE  &mo SYM
+                        >;
+                };
+            sym_layer {
+                label = "sym";
+// +------------------------------------------------------------------------------------+
+// | none |  1  |  2  |  3  |  4  |  5  |         |  6  |  7  |  8  |  9  |  0  | none |
+// | none | +  |  [  |  {  |  (  |  &  |         |  =  |  )  |  }  |  ]  |  !  | none |
+// | none | `  |  #  |  $  |  ^  |  @  |         |  -  |  *  |  % |  /  |  \  | none |
+//                    | CTRL | GUI | SHIFT |    |     |     |     |
+// +------------------------------------------------------------------------------------+
+                bindings = <
+   &none &kp N1    &kp N2    &kp N3     &kp N4   &kp N5    &kp N6    &kp N7    &kp N8     &kp N9    &kp N0     &none
+   &none &kp PLUS  &kp LBRKT &kp LCBRKT &kp LPRN &kp AMP   &kp EQUAL &kp TIMES &kp RCBRKT &kp RPRN  &kp EXCL   &none
+   &none &kp TILDE &kp HASH  &kp DOLLAR &kp CIRC &kp AT    &kp DASH  &kp PERC  &kp STAR   &kp SLASH &kp BSLASH &none
+                          &kp LCTRL &kp LGUI  &kp LSHIFT   &trans &trans &trans
+                        >;
+                };
+            media_layer {
+                label = "media";
+// +------------------------------------------------------------------------------------+
+// |  none |     |     |     |     |     |         |     |     |     |     |     | none |
+// |  none | BT1 | BT2 | BT3 | BT4 | BT5 |         |     | MUTE| VOL-| VOL+|     | none |
+// |  none |PW ON|PWOFF|     |     |     |         |     | PREV||> ||| NEXT|     | none |
+//                    |     |     |     |    |     |     |     |
+// +------------------------------------------------------------------------------------+
+                bindings = <
+   &none &trans            &trans              &trans       &trans       &trans       &trans &trans     &trans       &trans       &trans &none
+   &none &bt BT_SEL 0      &bt BT_SEL 1        &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans &none
+   &none &ext_power EP_ON  &ext_power EP_OFF   &trans       &trans       &trans       &trans &kp C_PREV &kp C_PP     &kp C_NEXT   &trans &none
+                                   &trans &trans &trans    &trans &trans &trans
+                        >;
+                };
+            fun_layer {
+                label = "fun";
+// +------------------------------------------------------------------------------------+
+// |  none | F1  | F2  | F3  | F4  | PSCRN  |                 |     |     |     |     |     | none |
+// |  none | F5  | F6  | F7  | F8  | SLCK   |                 |     |     |     |     |     | none |
+// |  none | F9  | F10 | F11 | F12 | PAUSEBR|                 |     |     |     |     |     | none |
+//                             |     |     |     |      |     |     |     |
+// +------------------------------------------------------------------------------------+
+                bindings = <
+   &none &kp F1 &kp F2  &kp F3  &kp F4  &kp PSCRN             &trans &trans &trans &trans &trans &none
+   &none &kp F5 &kp F6  &kp F7  &kp F8  &kp SLCK              &trans &trans &trans &trans &trans &none
+   &none &kp F9 &kp F10 &kp F11 &kp F12 &kp PAUSE_BREAK       &trans &trans &trans &trans &trans &none
+                                  &trans &trans &trans    &trans &trans &trans
+                        >;
+                };
+        };
+};
