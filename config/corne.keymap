@@ -44,15 +44,15 @@
         default_layer {
             label = "base";
 // +------------------------------------------------------------------------------------+
-// | none | ; : | , < | . > |  P  |  Y        |         |  FUN F  |  G  |  C  |  R  |  MEDIA L  | none |
-// | none |  A  |  O  |  E  |  U  |  I        |         |  D      |  H  |  T  |  N  |  S        | none |
-// | none | ' " |  Q  |  J  |  K  |  MACRO X  |         |  B      |  M  |  W  |  V  |  Z        | none |
-//               | CTRL/ESC | SPACE | SHIFT/CAPS |  | ALT/ENT | BACKSPACE | SYM |
+// | none | ; : | , < | . > |  P  |  Y  |         |  FUN F  |  G  |  C  |  R  |  MEDIA L  | none |
+// | none |  A  |  O  |  E  |  U  |  I  |         |  D      |  H  |  T  |  N  |  S        | none |
+// | none | ' " |  Q  |  J  |  K  |  X  |         |  B      |  M  |  W  |  V  |  Z        | none |
+//         | CTRL/ESC | SPACE | SHIFT/CAPS |  | ALT/ENT | BACKSPACE | SYM |
 // +------------------------------------------------------------------------------------+
             bindings = <
    &none &kp SEMI   &kp COMMA &kp DOT &kp P &kp Y          &lt FUN F &kp G  &kp C   &kp R   &lt MEDIA L &none
    &none &kp A      &kp O     &kp E   &kp U &kp I          &kp D     &kp H  &kp T   &kp N   &kp S       &none
-   &none &kp SQT    &kp Q     &kp J   &kp K &lt MACRO X    &kp B     &kp M  &kp W   &kp V   &kp Z       &none
+   &none &kp SQT    &kp Q     &kp J   &kp K &kp X          &kp B     &kp M  &kp W   &kp V   &kp Z       &none
                   &mt LCTRL ESC &kp SPACE &td_caps       &mt LALT ENTER &kp BACKSPACE  &mo SYM
                         >;
                 };
