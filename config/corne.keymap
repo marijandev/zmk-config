@@ -86,7 +86,7 @@
    &none &kp SEMI &kp COMMA   &kp DOT     &kp P        &kp Y                &kp F &kp G        &kp C       &kp R       &kp L &none
    &none &kp A    &lhr LALT O &lhr LCMD E &lhr LCTRL U &kp I                &kp D &rhr LCTRL H &rhr LCMD T &rhr LALT N &kp S &none
    &none &kp SQT  &kp Q       &kp J       &kp K        &kp X                &kp B &kp M        &kp W       &kp V       &kp Z &none
-                            &mt LCTRL ESC &lt MACRO SPACE &td_caps      &mo NAV &mo SYM &kp LCMD
+                            &mt LCTRL ESC &lt MACRO SPACE &td_caps      &lt NAV BSPC &mo SYM &kp LCMD
             >;
         };
 
@@ -97,7 +97,7 @@
             label = "sym";
             bindings = <
    &none &kp N1    &kp N2         &kp N3         &kp N4          &kp N5       &kp N6    &kp N7    &kp N8    &kp N9   &kp N0    &none
-   &none &kp TAB   &lhr LALT LBKT &lhr LCMD LBRC &lhr LCTRL LPAR &kp MINUS    &kp EQUAL &kp RPAR  &kp RBRC  &kp RBKT &kp BSPC  &none
+   &none &kp TAB   &lhr LALT LBKT &lhr LCMD LBRC &lhr LCTRL LPAR &kp MINUS    &kp EQUAL &kp RPAR  &kp RBRC  &kp RBKT &kp EXCL  &none
    &none &kp GRAVE &kp HASH       &kp DLLR       &kp CARET       &kp BSLH     &kp DEL   &kp STAR  &kp PRCNT &kp FSLH &kp ENTER &none
                                                     &trans &trans &trans   &trans &trans &trans
             >;
@@ -109,9 +109,9 @@
         nav_layer {
             label = "nav";
             bindings = <
-   &none &trans  &trans   &trans &trans &to MEDIA      &sl FUN &trans   &trans &trans &kp RIGHT &none
-   &none &kp TAB &trans   &trans &trans &trans         &trans  &kp LEFT &trans &trans &kp BSPC  &none
-   &none &trans  &kp DOWN &kp UP &trans &trans         &trans  &trans   &trans &trans &kp ENTER &none
+   &none &trans  &trans &trans   &trans &to MEDIA      &sl FUN &trans   &trans &trans &kp RIGHT &none
+   &none &kp TAB &trans &trans   &trans &trans         &trans  &kp LEFT &trans &trans &kp BSPC  &none
+   &none &trans  &trans &kp DOWN &kp UP &trans         &kp DEL &trans   &trans &trans &kp ENTER &none
                               &trans &trans &trans   &trans &trans &trans
             >;
         };
