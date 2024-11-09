@@ -19,8 +19,10 @@
 
 #define BASE 0
 #define SYM 1
-#define MEDIA 2
-#define FUN 3
+#define NAV 2
+#define MEDIA 3
+#define FUN 4
+#define MACRO 5
 
 // This is ok if only a single sticky key is used.
 // Create new behavior if multiple &sk is used.
@@ -37,69 +39,133 @@
             tapping-term-ms = <200>;
             bindings = <&sk LSHFT>, <&kp CAPSLOCK>;
         };
+        /**
+         * Left hand positional hold tap, used for home block modifiers
+         */
+        lhr: left_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <200>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R>;
+            hold-trigger-on-release;
+        };
+
+        /**
+         * Right hand positional hold tap, used for home block modifiers
+         */
+        rhr: right_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <200>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L>;
+            hold-trigger-on-release;
+        };
+
+        /**
+         * Layer hold tap
+         */
+        lht: right_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <200>;
+            global-quick-tap;
+            bindings = <&lt>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L>;
+            hold-trigger-on-release;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
 
+        /**
+         * Base layer
+         */
         default_layer {
             label = "base";
-// +------------------------------------------------------------------------------------+
-// | none | ; : | , < | . > |  P  |  Y  |         |  FUN F  |  G  |  C  |  R  |  MEDIA L  | none |
-// | none |  A  |  O  |  E  |  U  |  I  |         |  D      |  H  |  T  |  N  |  S        | none |
-// | none | ' " |  Q  |  J  |  K  |  X  |         |  B      |  M  |  W  |  V  |  Z        | none |
-//         | CTRL/ESC | SPACE | SHIFT/CAPS |  | ALT/ENT | BACKSPACE | SYM |
-// +------------------------------------------------------------------------------------+
             bindings = <
-   &none &kp SEMI   &kp COMMA &kp DOT &kp P &kp Y          &lt FUN F &kp G  &kp C   &kp R   &lt MEDIA L &none
-   &none &kp A      &kp O     &kp E   &kp U &kp I          &kp D     &kp H  &kp T   &kp N   &kp S       &none
-   &none &kp SQT    &kp Q     &kp J   &kp K &kp X          &kp B     &kp M  &kp W   &kp V   &kp Z       &none
-                  &mt LCTRL ESC &kp SPACE &td_caps       &mt LALT ENTER &kp BSPC &mo SYM
-                        >;
-                };
-            sym_layer {
-                label = "sym";
-// +------------------------------------------------------------------------------------+
-// | none |  1  |  2  |  3  |  4  |  5  |         |  6  |  7  |  8  |  9  |  0  | none |
-// | none | +  |  [  |  {  |  (  |  &  |         |  =  |  )  |  }  |  ]  |  -  | none |
-// | none | `  |  #  |  $  |  ^  |  @  |         |  !  |  *  |  % |  /  |  \  | none |
-//                    | CTRL | GUI | SHIFT |    |     |     |     |
-// +------------------------------------------------------------------------------------+
-                bindings = <
-   &none &kp N1    &kp N2   &kp N3   &kp N4    &kp N5     &kp N6    &kp N7   &kp N8    &kp N9   &kp N0    &none
-   &none &kp PLUS  &kp LBKT &kp LBRC &kp LPAR  &kp AMPS   &kp EQUAL &kp RPAR &kp RBRC  &kp RBKT &kp MINUS &none
-   &none &kp GRAVE &kp HASH &kp DLLR &kp CARET &kp AT     &kp EXCL  &kp STAR &kp PRCNT &kp FSLH &kp BSLH  &none
-                        &kp LCTRL &kp LGUI &kp LSHIFT   &trans &trans &trans
-                        >;
-                };
-            media_layer {
-                label = "media";
-// +------------------------------------------------------------------------------------+
-// |  none |     |     |     |     |     |         |     |     |     |     |     | none |
-// |  none | BT1 | BT2 | BT3 | BT4 | BT5 |         |     | MUTE| VOL-| VOL+|     | none |
-// |  none |PW ON|PWOFF|     |     |     |         |     | PREV||> ||| NEXT|     | none |
-//                    |     |     |     |    |     |     |     |
-// +------------------------------------------------------------------------------------+
-                bindings = <
+   &none &kp SEMI &kp COMMA   &kp DOT     &kp P        &kp Y                &kp F &kp G        &kp C       &kp R       &kp L &none
+   &none &kp A    &lhr LALT O &lhr LCMD E &lhr LCTRL U &kp I                &kp D &rhr LCTRL H &rhr LCMD T &rhr LALT N &kp S &none
+   &none &kp SQT  &kp Q       &kp J       &kp K        &kp X                &kp B &kp M        &kp W       &kp V       &kp Z &none
+                                  &mt LCTRL ESC &lht MACRO SPACE &td_caps      &mo NAV &mo SYM &kp LCMD
+            >;
+        };
+
+        /**
+         * Symbol layer
+         */
+        sym_layer {
+            label = "sym";
+            bindings = <
+   &none &kp N1    &kp N2         &kp N3         &kp N4          &kp N5       &kp N6    &kp N7    &kp N8    &kp N9   &kp N0    &none
+   &none &kp TAB   &lhr LALT LBKT &lhr LCMD LBRC &lhr LCTRL LPAR &kp AMPS     &kp EQUAL &kp RPAR  &kp RBRC  &kp RBKT &kp BSPC  &none
+   &none &kp GRAVE &kp HASH       &kp DLLR       &kp CARET       &kp AT       &kp DEL   &kp MINUS &kp FSLH  &kp BSLH &kp ENTER &none
+                                  &trans &trans &trans   &trans &trans &trans
+            >;
+        };
+
+        /**
+         * Navigation layer
+         */
+        nav_layer {
+            label = "nav";
+            bindings = <
+   &none &trans &trans   &trans &trans &to MEDIA      &sl FUN &trans   &trans &trans &kp RIGHT &none
+   &none &trans &trans   &trans &trans &trans         &trans  &kp LEFT &trans &trans &kp BSPC  &none
+   &none &trans &kp DOWN &kp UP &trans &trans         &trans  &trans   &trans &trans &kp ENTER &none
+                              &trans &trans &trans   &trans &trans &trans
+                >;
+        };
+
+        /**
+         * Media layer
+         */
+        media_layer {
+            label = "media";
+            bindings = <
    &none &trans           &trans            &trans       &trans       &trans       &trans &trans     &trans       &trans       &trans &none
    &none &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans &none
    &none &ext_power EP_ON &ext_power EP_OFF &trans       &trans       &trans       &trans &kp C_PREV &kp C_PP     &kp C_NEXT   &trans &none
-                                                         &trans &trans &trans    &trans &trans &trans
-                        >;
-                };
-            fun_layer {
-                label = "fun";
-// +------------------------------------------------------------------------------------+
-// |  none | F1  | F2  | F3  | F4  | PSCRN  |                 |     |     |     |     |     | none |
-// |  none | F5  | F6  | F7  | F8  | SLCK   |                 |     |     |     |     |     | none |
-// |  none | F9  | F10 | F11 | F12 | PAUSEBR|                 |     |     |     |     |     | none |
-//                             |     |     |     |      |     |     |     |
-// +------------------------------------------------------------------------------------+
-                bindings = <
+                                                         &to BASE &trans &trans    &trans &trans &trans
+                >;
+        };
+
+        /**
+         * Function layer
+         */
+        fun_layer {
+            label = "fun";
+            bindings = <
    &none &kp F1 &kp F2  &kp F3  &kp F4  &kp PSCRN             &trans &trans &trans &trans &trans &none
    &none &kp F5 &kp F6  &kp F7  &kp F8  &kp SLCK              &trans &trans &trans &trans &trans &none
    &none &kp F9 &kp F10 &kp F11 &kp F12 &kp PAUSE_BREAK       &trans &trans &trans &trans &trans &none
                                   &trans &trans &trans    &trans &trans &trans
-                        >;
-                };
+                >;
         };
+
+        /**
+         * Macro layer
+         */
+        macro_layer {
+            label = "macro";
+            bindings = <
+   &none &kp LC(N1) &kp LC(N2) &kp LC(N3) &kp LC(N4) &kp LC(N5)        &kp LC(N6) &kp LC(N7) &kp LC(N8) &kp LC(N9) &kp LC(N0) &none
+   &none &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)        &kp LG(N6) &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(N0) &none
+   &none &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans            &none      &none      &none      &none      &none      &none
+                                            &trans &trans &trans    &trans &trans &trans
+                >;
+        };
+    };
 };
