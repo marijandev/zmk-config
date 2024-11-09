@@ -73,22 +73,6 @@
             hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
-
-        /**
-         * Layer hold tap
-         */
-        lht: layer_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_POSITIONAL_HOLD_TAP";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <300>;
-            quick-tap-ms = <200>;
-            global-quick-tap;
-            bindings = <&layer>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L>;
-            hold-trigger-on-release;
-        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -102,7 +86,7 @@
    &none &kp SEMI &kp COMMA   &kp DOT     &kp P        &kp Y                &kp F &kp G        &kp C       &kp R       &kp L &none
    &none &kp A    &lhr LALT O &lhr LCMD E &lhr LCTRL U &kp I                &kp D &rhr LCTRL H &rhr LCMD T &rhr LALT N &kp S &none
    &none &kp SQT  &kp Q       &kp J       &kp K        &kp X                &kp B &kp M        &kp W       &kp V       &kp Z &none
-                                  &mt LCTRL ESC &lht MACRO SPACE &td_caps      &mo NAV &mo SYM &kp LCMD
+                            &mt LCTRL ESC &lt MACRO SPACE &td_caps      &mo NAV &mo SYM &kp LCMD
             >;
         };
 
