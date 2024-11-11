@@ -86,7 +86,7 @@
    &none &kp SEMI    &kp COMMA   &kp DOT      &kp P        &kp Y                &kp F &kp G        &kp C        &kp R       &kp L       &none
    &none &lhr LGUI A &lhr LALT O &lhr LSHFT E &lhr LCTRL U &kp I                &kp D &rhr LCTRL H &rhr LSHFT T &rhr LALT N &rhr LGUI S &none
    &none &kp SQT     &kp Q       &kp J        &kp K        &kp X                &kp B &kp M        &kp W        &kp V       &kp Z       &none
-                            &mt LCTRL ESC &lt NAV ENTER &lt MACRO SPACE      &kp BSPC &mo SYM &td_caps
+                            &kp LCTRL &lt NAV ENTER &lt MACRO SPACE      &kp BSPC &mo SYM &kp LGUI
             >;
         };
 
