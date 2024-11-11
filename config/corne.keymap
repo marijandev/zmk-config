@@ -96,9 +96,9 @@
         sym_layer {
             label = "sym";
             bindings = <
-   &none &kp N1         &kp N2         &kp N3          &kp N4          &kp N5         &kp N6    &kp N7          &kp N8          &kp N9         &kp N0         &none
-   &none &lhr LGUI PLUS &lhr LALT LBKT &lhr LSHFT LBRC &lhr LCTRL LPAR &kp AMPS       &kp EQUAL &rhr LCTRL RPAR &rhr LSHFT RBRC &rhr LALT RBKT &rhr LGUI EXCL &none
-   &none &kp GRAVE      &kp HASH       &kp DLLR        &kp CARET       &kp AT         &kp MINUS &kp STAR        &kp PRCNT       &kp FSLH       &kp BSLH       &none
+   &none &kp N1         &kp N2         &kp N3          &kp N4          &kp N5         &kp N6    &kp N7          &kp N8          &kp N9         &kp N0          &none
+   &none &lhr LGUI PLUS &lhr LALT LBKT &lhr LSHFT LBRC &lhr LCTRL LPAR &kp AMPS       &kp EQUAL &rhr LCTRL RPAR &rhr LSHFT RBRC &rhr LALT RBKT &rhr LGUI MINUS &none
+   &none &kp GRAVE      &kp HASH       &kp DLLR        &kp CARET       &kp AT         &kp EXCL  &kp STAR        &kp PRCNT       &kp FSLH       &kp BSLH        &none
                                                           &trans &trans &trans   &trans &trans &trans
             >;
         };
@@ -110,8 +110,8 @@
             label = "nav";
             bindings = <
    &none &mt LALT TAB  &kp W &kp E &kp R &kp T         &kp PG_UP &kp BSPC &kp UP   &kp DEL   &trans  &none
-   &none &mt LCTRL ESC &kp S &kp D &kp F &kp G         &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET &none
-   &none &td_caps      &kp X &kp C &kp V &kp DEL       &kp INS   &trans   &trans   &trans    &to FUN &none
+   &none &mt LCTRL ESC &kp S &kp D &kp F &to FUN       &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET &none
+   &none &td_caps      &kp X &kp C &kp V &kp DEL       &kp INS   &trans   &trans   &trans    &trans  &none
                             &kp LGUI &trans &trans   &trans &trans &trans
             >;
         };
@@ -124,7 +124,7 @@
             bindings = <
    &none &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp C_BRI_UP &trans     &trans       &trans       &trans &none
    &none &trans           &trans            &trans       &trans       &trans       &kp C_BRI_DN &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans &none
-   &none &ext_power EP_ON &ext_power EP_OFF &trans       &trans       &trans       &trans       &kp C_PREV &kp C_PP     &kp C_NEXT   &none  &none
+   &none &ext_power EP_ON &ext_power EP_OFF &out OUT_USB &out OUT_BLE &bt BT_CLR   &trans       &kp C_PREV &kp C_PP     &kp C_NEXT   &none  &none
                                                          &trans &trans &to BASE    &to FUN      &trans &trans
             >;
         };
@@ -137,8 +137,8 @@
             bindings = <
    &none &kp F1 &kp F2  &kp F3  &kp F4  &kp PSCRN             &trans &trans    &trans    &trans   &trans    &none
    &none &kp F5 &kp F6  &kp F7  &kp F8  &kp SLCK              &trans &kp LCTRL &kp LSHFT &kp LALT &kp LGUI  &none
-   &none &kp F9 &kp F10 &kp F11 &kp F12 &kp PAUSE_BREAK       &trans &trans    &trans    &trans   &to MEDIA &none
-                                  &trans &trans &to BASE    &trans &trans &trans
+   &none &kp F9 &kp F10 &kp F11 &kp F12 &kp PAUSE_BREAK       &trans &trans    &trans    &trans   &trans    &none
+                                  &trans &trans &to BASE    &to MEDIA &trans &trans
             >;
         };
 
