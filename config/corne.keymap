@@ -52,6 +52,7 @@
             flavor = "balanced";
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
+            require-prior-idle-ms = <100>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R>;
@@ -68,6 +69,7 @@
             flavor = "balanced";
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
+            require-prior-idle-ms = <100>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L>;
@@ -84,7 +86,7 @@
             label = "base";
             bindings = <
    &none &kp SEMI    &kp COMMA   &kp DOT      &kp P        &kp Y                &kp F &kp G        &kp C        &kp R       &kp L       &none
-   &none &lhr LGUI A &lhr LALT O &lhr LSHFT E &lhr LCTRL U &kp I                &kp D &rhr LCTRL H &rhr LSHFT T &rhr LALT N &rhr LGUI S &none
+   &none &lhr LGUI A &lhr LALT O &lhr LCTRL E &lhr LSHFT U &kp I                &kp D &rhr LSHFT H &rhr LCTRL T &rhr LALT N &rhr LGUI S &none
    &none &kp SQT     &kp Q       &kp J        &kp K        &kp X                &kp B &kp M        &kp W        &kp V       &kp Z       &none
                             &kp LCTRL &lt NAV ENTER &lt MACRO SPACE      &kp BSPC &mo SYM &kp LGUI
             >;
@@ -97,7 +99,7 @@
             label = "sym";
             bindings = <
    &none &kp N1         &kp N2         &kp N3          &kp N4          &kp N5         &kp N6    &kp N7          &kp N8          &kp N9         &kp N0          &none
-   &none &lhr LGUI PLUS &lhr LALT LBKT &lhr LSHFT LBRC &lhr LCTRL LPAR &kp AMPS       &kp EQUAL &rhr LCTRL RPAR &rhr LSHFT RBRC &rhr LALT RBKT &rhr LGUI MINUS &none
+   &none &lhr LGUI PLUS &lhr LALT LBKT &lhr LCTRL LBRC &lhr LSHFT LPAR &kp AMPS       &kp EQUAL &rhr LSHFT RPAR &rhr LCTRL RBRC &rhr LALT RBKT &rhr LGUI MINUS &none
    &none &kp GRAVE      &kp HASH       &kp DLLR        &kp CARET       &kp AT         &kp EXCL  &kp STAR        &kp PRCNT       &kp FSLH       &kp BSLH        &none
                                                           &trans &trans &trans   &trans &trans &trans
             >;
@@ -136,7 +138,7 @@
             label = "fun";
             bindings = <
    &none &kp F1 &kp F2  &kp F3  &kp F4  &kp PSCRN             &trans &trans    &trans    &trans   &trans    &none
-   &none &kp F5 &kp F6  &kp F7  &kp F8  &kp SLCK              &trans &kp LCTRL &kp LSHFT &kp LALT &kp LGUI  &none
+   &none &kp F5 &kp F6  &kp F7  &kp F8  &kp SLCK              &trans &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &none
    &none &kp F9 &kp F10 &kp F11 &kp F12 &kp PAUSE_BREAK       &trans &trans    &trans    &trans   &trans    &none
                                   &trans &trans &to BASE    &to MEDIA &trans &trans
             >;
