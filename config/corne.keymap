@@ -88,7 +88,7 @@
    &none &kp SEMI &lhr LALT COMMA &lhr LCTRL DOT &lhr LGUI P &kp Y                &kp F &rhr LGUI G &rhr LCTRL C &rhr LALT R &kp L &none
    &none &kp A    &kp O           &kp E          &kp U       &kp I                &kp D &kp H       &kp T        &kp N       &kp S &none
    &none &kp SQT  &kp Q           &kp J          &kp K       &kp X                &kp B &kp M       &kp W        &kp V       &kp Z &none
-                                    &mo MACRO &lt NAV SPACE &td_caps      &kp BSPC &mo SYM &kp ENTER
+                                  &lt MACRO ENTER &lt NAV SPACE &td_caps      &kp BSPC &mo SYM &kp TAB
             >;
         };
 
@@ -98,10 +98,10 @@
         sym_layer {
             label = "sym";
             bindings = <
-   &none &kp N1    &lhr LALT N2 &lhr LCTRL N3 &lhr LGUI N4 &kp N5         &kp N6    &rhr LGUI N7 &rhr LCTRL N8 &rhr LALT N9 &kp N0    &none
-   &none &kp PLUS  &kp LBKT     &kp LBRC      &kp LPAR     &kp AMPS       &kp EQUAL &kp RPAR     &kp RBRC      &kp RBKT     &kp MINUS &none
-   &none &kp GRAVE &kp HASH     &kp DLLR      &kp CARET    &kp AT         &kp EXCL  &kp STAR     &kp PRCNT     &kp FSLH     &kp BSLH  &none
-                                                          &trans &trans &trans   &trans &trans &trans
+   &none &kp N1    &kp N2   &kp N3   &kp N4    &kp N5         &kp N6    &kp N7   &kp N8    &kp N9   &kp N0    &none
+   &none &kp PLUS  &kp LBKT &kp LBRC &kp LPAR  &kp AMPS       &kp EQUAL &kp RPAR &kp RBRC  &kp RBKT &kp MINUS &none
+   &none &kp GRAVE &kp HASH &kp DLLR &kp CARET &kp AT         &kp EXCL  &kp STAR &kp PRCNT &kp FSLH &kp BSLH  &none
+                                    &trans &trans &trans   &trans &trans &trans
             >;
         };
 
@@ -112,8 +112,8 @@
             label = "nav";
             bindings = <
    &none &mt LALT TAB  &kp W     &kp E     &kp R     &kp T         &kp PG_UP &kp BSPC &kp UP   &kp DEL   &trans  &none
-   &none &mt LCTRL ESC &kp S     &kp D     &kp F     &to FUN       &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET &none
-   &none &kp ENTER     &kp LC(X) &kp LC(C) &kp LC(V) &kp DEL       &kp INS   &trans   &trans   &trans    &trans  &none
+   &none &mt LCTRL ESC &kp LC(A) &kp D     &kp F     &to FUN       &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET &none
+   &none &kp LSHFT     &kp LC(X) &kp LC(C) &kp LC(V) &kp BSPC       &kp INS  &trans   &trans   &trans    &trans  &none
                                       &trans &trans &trans   &trans &trans &trans
             >;
         };
