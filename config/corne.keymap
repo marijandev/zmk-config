@@ -40,7 +40,7 @@
             label = "TD_CAPS";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&sk LSHFT>, <&kp CAPSLOCK>;
+            bindings = <&sk LSHFT>, <&caps_word>;
         };
         /**
          * Left hand positional hold tap, used for home block modifiers
@@ -88,7 +88,7 @@
    &none &kp SEMI &lhr LALT COMMA &lhr LCTRL DOT &lhr LGUI P &kp Y                &kp F &rhr LGUI G &rhr LCTRL C &rhr LALT R &kp L &none
    &none &kp A    &kp O           &kp E          &kp U       &kp I                &kp D &kp H       &kp T        &kp N       &kp S &none
    &none &kp SQT  &kp Q           &kp J          &kp K       &kp X                &kp B &kp M       &kp W        &kp V       &kp Z &none
-                                  &lt MACRO ENTER &lt NAV SPACE &td_caps      &kp BSPC &mo SYM &kp TAB
+                                    &lt MACRO RET &lt NAV SPACE &td_caps      &mo NAV &mo SYM &kp LGUI
             >;
         };
 
