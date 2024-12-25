@@ -51,8 +51,6 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
@@ -65,9 +63,7 @@
             label = "POSITIONAL_HOLD_PREF_TAP";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            tapping-term-ms = <100>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
@@ -80,9 +76,7 @@
             label = "LAYER_POSITIONAL_HOLD_PREF_TAP";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <125>;
-            require-prior-idle-ms = <30>;
+            tapping-term-ms = <175>;
             global-quick-tap;
             bindings = <&mo>, <&kp>;
             hold-trigger-on-release;
@@ -97,10 +91,10 @@
         default_layer {
             label = "base";
             bindings = <
-   &none &kp SEMI &ptp LALT COMMA &ptp LCTRL DOT &ptp LGUI P &kp Y                &kp F &ptp RGUI G &ptp RCTRL C &ptp RALT R &kp L &none
-   &none &kp A    &kp O           &kp E          &kp U       &kp I                &kp D &kp H       &kp T        &kp N       &kp S &none
-   &none &kp SQT  &kp Q           &kp J          &kp K       &kp X                &kp B &kp M       &kp W        &kp V       &kp Z &none
-                                    &lphp MACRO RET &lphp NAV SPACE &td_caps      &mo NAV &mo SYM &kp RGUI
+   &none &kp SEMI    &kp COMMA   &kp DOT      &kp P        &kp Y                &kp F &kp G        &kp C        &kp R       &kp L       &none
+   &none &ptp LGUI A &ptp LALT O &ptp LCTRL E &ptp LSHFT U &kp I                &kp D &ptp LSHFT H &ptp RCTRL T &ptp RALT N &ptp RGUI S &none
+   &none &kp SQT     &kp Q       &kp J        &kp K        &kp X                &kp B &kp M        &kp W        &kp V       &kp Z       &none
+                            &kp LCTRL &lphp NAV SPACE &lphp MACRO RET      &td_caps &mo SYM &kp RGUI
             >;
         };
 
