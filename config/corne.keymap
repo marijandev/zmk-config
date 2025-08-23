@@ -149,7 +149,7 @@
         /**
          * Navigation layer MacOS
          */
-        nav_layer {
+        nav_layer_mac {
             label = "nav_mac";
             bindings = <
    &none &php LALT TAB &kp W     &kp E     &kp R     &kp T          &kp PG_UP &kp BSPC &kp UP   &kp DEL   &trans &none
@@ -175,7 +175,7 @@
         /**
          * Function layer MacOS
          */
-        fun_layer {
+        fun_layer_mac {
             label = "fun_mac";
             bindings = <
    &none &kp F1 &kp F2  &kp F3  &kp F4  &kp PSCRN             &trans &trans    &trans    &trans   &trans    &none
