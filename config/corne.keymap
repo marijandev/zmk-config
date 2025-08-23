@@ -152,10 +152,10 @@
         nav_layer_mac {
             label = "nav_mac";
             bindings = <
-   &none &php LALT TAB &kp W     &kp E     &kp R     &kp T          &kp PG_UP &kp BSPC &kp UP   &kp DEL   &trans &none
-   &none &php LGUI ESC &kp LG(A) &kp D     &kp F     &to FUN_MAC    &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none  &none
-   &none &kp LG(Z)     &kp LG(X) &kp LG(C) &kp LG(V) &kp BSPC       &kp INS  &trans   &trans   &trans    &trans &none
-                                      &trans &trans &trans   &trans &trans &trans
+   &none &php LALT TAB     &kp W &kp E &kp R &kp T          &kp PG_UP &kp BSPC &kp UP   &kp DEL   &trans &none
+   &none &php LGUI ESC     &kp A &kp D &kp F &to FUN_MAC    &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none  &none
+   &none &php LSHIFT LG(Z) &kp X &kp C &kp V &kp BSPC       &kp INS  &trans   &trans   &trans    &trans &none
+                                  &trans &trans &trans   &trans &trans &trans
             >;
         };
 
