@@ -152,10 +152,10 @@
         nav_layer_mac {
             label = "nav_mac";
             bindings = <
-   &none &php LALT TAB     &kp W &kp E &kp R &kp T          &kp PG_UP &kp BSPC &kp UP   &kp DEL   &trans &none
-   &none &php LGUI ESC     &kp A &kp D &kp F &to FUN_MAC    &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none  &none
-   &none &php LSHIFT LG(Z) &kp X &kp C &kp V &kp BSPC       &kp INS  &trans   &trans   &trans    &trans &none
-                                  &trans &trans &trans   &trans &trans &trans
+   &none &php LALT TAB     &kp W     &kp E     &kp R     &kp T          &kp PG_UP &kp BSPC &kp UP   &kp DEL   &trans &none
+   &none &php LGUI ESC     &kp LG(A) &kp D     &kp F     &to FUN_MAC    &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none  &none
+   &none &php LSHIFT LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &kp BSPC       &kp INS  &trans   &trans   &trans    &trans &none
+                                      &trans &trans &trans   &trans &trans &trans
             >;
         };
 
@@ -204,9 +204,9 @@
         macro_layer_mac {
             label = "macro_mac";
             bindings = <
-   &none &kp LG(N1)  &kp LG(N2)   &kp LG(N3)    &kp LG(N4)     &kp LG(N5)        &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)  &none
-   &none &hyperkp N1 &hyperkp N2  &hyperkp N3   &hyperkp N4    &hyperkp N5       &hyperkp N6 &hyperkp N7 &hyperkp N8 &hyperkp N9 &hyperkp N0 &none
-   &none &kp LG(Z)   &kp C_AC_CUT &kp C_AC_COPY &kp C_AC_PASTE &hyperkp C        &none       &none       &none       &none       &none       &none
+   &none &kp LG(N1)        &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)        &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)  &none
+   &none &hyperkp N1       &hyperkp N2 &hyperkp N3 &hyperkp N4 &hyperkp N5       &hyperkp N6 &hyperkp N7 &hyperkp N8 &hyperkp N9 &hyperkp N0 &none
+   &none &php LSHIFT LC(Z) &kp LC(X)   &kp LC(C)   &kp LC(V)   &hyperkp C        &none       &none       &none       &none       &none       &none
                                             &trans &trans &trans    &trans &trans &trans
             >;
         };
