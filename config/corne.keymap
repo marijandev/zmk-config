@@ -113,9 +113,9 @@
         base_layer_mac {
             label = "base_mac";
             bindings = <
-   &none &kp SEMI     &kp COMMA   &kp DOT     &kp P        &kp Y                &kp F &kp G        &kp C       &kp R       &kp L       &none
-   &none &ptp LCTRL A &ptp LALT O &ptp LGUI E &ptp LSHFT U &kp I                &kp D &ptp LSHFT H &ptp RGUI T &ptp RALT N &ptp RCTRL S &none
-   &none &kp SQT      &kp Q       &kp J       &kp K        &kp X                &kp B &kp M        &kp W       &kp V       &kp Z       &none
+   &none &kp SEMI    &kp COMMA   &kp DOT      &kp P        &kp Y                &kp F &kp G        &kp C        &kp R       &kp L       &none
+   &none &ptp LGUI A &ptp LALT O &ptp LCTRL E &ptp LSHFT U &kp I                &kp D &ptp LSHFT H &ptp RCTRL T &ptp RALT N &ptp RGUI S &none
+   &none &kp SQT     &kp Q       &kp J        &kp K        &kp X                &kp B &kp M        &kp W        &kp V       &kp Z       &none
                             &hyper &lphp NAV_MAC SPACE &lphp MACRO_MAC RET    &td_caps &mo SYM &hyper
             >;
         };
@@ -178,9 +178,9 @@
         fun_layer_mac {
             label = "fun_mac";
             bindings = <
-   &none &kp F1 &kp F2  &kp F3  &kp F4  &kp PSCRN             &trans &trans    &trans   &trans   &trans    &none
-   &none &kp F5 &kp F6  &kp F7  &kp F8  &kp SLCK              &trans &kp RSHFT &kp RGUI &kp RALT &kp RCTRL &none
-   &none &kp F9 &kp F10 &kp F11 &kp F12 &kp PAUSE_BREAK       &trans &trans    &trans   &trans   &trans    &none
+   &none &kp F1 &kp F2  &kp F3  &kp F4  &kp PSCRN             &trans &trans    &trans    &trans   &trans    &none
+   &none &kp F5 &kp F6  &kp F7  &kp F8  &kp SLCK              &trans &kp RSHFT &kp RCTRL &kp RALT &kp RGUI  &none
+   &none &kp F9 &kp F10 &kp F11 &kp F12 &kp PAUSE_BREAK       &trans &trans    &trans    &trans   &trans    &none
                               &trans &to BASE_MAC &trans    &trans &to MEDIA_MAC &trans
             >;
         };
