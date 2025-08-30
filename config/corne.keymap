@@ -204,9 +204,9 @@
         macro_layer_mac {
             label = "macro_mac";
             bindings = <
-   &none &kp LG(N1)        &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)        &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)  &none
-   &none &hyperkp N1       &hyperkp N2 &hyperkp N3 &hyperkp N4 &hyperkp N5       &hyperkp N6 &hyperkp N7 &hyperkp N8 &hyperkp N9 &hyperkp N0 &none
-   &none &php LSHIFT LC(Z) &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp LG(S)         &none       &none       &none       &none       &none       &none
+   &none &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)       &kp LG(N6) &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(N0) &none
+   &none &kp LA(N1) &kp LA(N2) &kp LA(N3) &kp LA(N4) &kp LA(N5)       &kp LA(N6) &kp LA(N7) &kp LA(N8) &kp LA(N9) &kp LA(N0) &none
+   &none &php LSHIFT LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LG(S)    &none      &none      &none      &none      &none      &none
                                             &trans &trans &trans    &trans &trans &trans
             >;
         };
